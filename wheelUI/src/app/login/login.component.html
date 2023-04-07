@@ -1,0 +1,23 @@
+<form class="example-form">
+     <p>Login</p>
+      <mat-form-field class="form-input">
+        <mat-label>Username</mat-label>
+        <input matInput>
+      </mat-form-field>
+ 
+      <mat-form-field class="form-input">
+        <mat-label>Password</mat-label>
+        <input matInput>
+        <a mat-icon-button matSuffix
+        (click)="hidePassword = !hidePassword"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hidePassword">
+         <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </a>
+      </mat-form-field>
+     
+      <div class="button-wrapper">
+      <button mat-raised-button color="primary">Confirm</button>
+      <button mat-stroked-button color="primary">Cancel</button>
+      </div>
+ </form>

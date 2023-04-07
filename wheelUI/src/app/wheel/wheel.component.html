@@ -1,0 +1,9 @@
+<h1>JACKPOT</h1>
+<div class="container">
+     <div class="wheel_box">
+          <canvas #spinWheel id="spinWheel"></canvas>
+          <button #spinBtn [disabled]="disableSpinBtn" (click)="onSpinBtnClick()" id="spin_btn">Spin</button>
+          <i id="asd" class="fa-solid fa-location-arrow"></i>
+     </div> 
+     <div id="text"><p>{{ text }}</p></div>
+</div>

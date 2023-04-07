@@ -1,0 +1,43 @@
+<form [formGroup]="registerForm" class="example-form">
+    <p>Register</p>
+     <mat-form-field class="form-input">
+       <mat-label>Username</mat-label>
+       <input matInput formControlName="username">
+     </mat-form-field>
+
+     <mat-form-field class="form-input">
+       <mat-label>Password</mat-label>
+       <input matInput formControlName="password"
+       [type]="hidePassword ? 'password' : 'text'">
+
+       <a mat-icon-button matSuffix
+       (click)="hidePassword = !hidePassword"
+       [attr.aria-label]="'Hide password'"
+       [attr.aria-pressed]="hidePassword">
+        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+     </a>
+      </mat-form-field>
+
+     <mat-form-field class="form-input">
+       <mat-label>Nickname</mat-label>
+       <input matInput formControlName="nickname">
+     </mat-form-field>
+
+     <mat-form-field class="form-input">
+       <mat-label>First Name</mat-label>
+       <input matInput formControlName="firstName">
+     </mat-form-field>
+
+     <mat-form-field class="form-input">
+       <mat-label>Last Name</mat-label>
+       <input matInput formControlName="lastName">
+     </mat-form-field>
+    
+     <div class="button-wrapper">
+     <button mat-raised-button
+     [disabled]="!registerForm.valid"
+     color="primary"
+     (click)="onConfirmClick()">Confirm</button>
+     <button mat-stroked-button color="primary">Cancel</button>
+     </div>
+</form>
